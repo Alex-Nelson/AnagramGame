@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="resultViewModel"
+            type="com.example.anagramgame.result.ResultViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".result.ResultFragment">
+
+        <TextView
+            android:id="@+id/difficultyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="54dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{resultViewModel.diff}"
+            tools:text="Difficulty: Easy" />
+
+        <TextView
+            android:id="@+id/finalScoreText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toStartOf="@+id/skippedTextView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/difficultyText"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:text="@{@string/result_score(resultViewModel.correct)}"
+            tools:text="Score: 360 / 400" />
+
+        <TextView
+            android:id="@+id/skippedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/finalScoreText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/finalScoreText"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:text="@{@string/result_skipped(resultViewModel.skipped)}"
+            tools:text="Skipped: 2 words" />
+
+        <Button
+            android:id="@+id/playAgainButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/play_again"
+            app:layout_constraintBaseline_toBaselineOf="@+id/quitButton"
+            app:layout_constraintEnd_toStartOf="@+id/quitButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{() -> resultViewModel.onPlayAgain()}"/>
+
+        <Button
+            android:id="@+id/quitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="@string/quit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/playAgainButton"
+            app:layout_constraintTop_toBottomOf="@+id/skippedTextView"
+            android:onClick="@{() -> resultViewModel.onQuit()}"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="score"
+            type="com.example.anagramgame.data.Score" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/game_id"
+            style="@style/score_headers"
+            android:layout_marginStart="@dimen/medium_padding"
+            app:gameNumber="@{score}"
+            app:layout_constraintEnd_toStartOf="@+id/game_difficulty"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Game No. 1" />
+
+        <TextView
+            android:id="@+id/game_score"
+            style="@style/score_subheaders"
+            android:layout_marginStart="@dimen/medium_padding"
+            app:gameScore="@{score}"
+            app:layout_constraintEnd_toStartOf="@+id/skipped_words"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/game_id"
+            tools:text="Total Score: 210" />
+
+        <TextView
+            android:id="@+id/skipped_words"
+            style="@style/score_subheaders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/game_score"
+            app:layout_constraintTop_toBottomOf="@+id/game_difficulty"
+            app:skippedValue="@{score}"
+            tools:text="Skipped: 4 words" />
+
+        <TextView
+            android:id="@+id/game_difficulty"
+            style="@style/score_headers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:gameDifficulty="@{score}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/game_id"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Difficulty: Medium" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="selectViewModel"
+            type="com.example.anagramgame.select.SelectDiffViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".select.SelectDiffFragment">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/playButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/easyRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/easy"
+                android:checked="@{selectViewModel.difficulty.equals(@string/easy)}"
+                android:onClick="@{() -> selectViewModel.setDifficulty(@string/easy)}"
+                style="@style/radio_button_style"/>
+
+            <RadioButton
+                android:id="@+id/mediumRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/medium"
+                android:checked="@{selectViewModel.difficulty.equals(@string/medium)}"
+                android:onClick="@{() -> selectViewModel.setDifficulty(@string/medium)}"
+                style="@style/radio_button_style" />
+
+            <RadioButton
+                android:id="@+id/hardRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hard"
+                android:checked="@{selectViewModel.difficulty.equals(@string/hard)}"
+                android:onClick="@{() -> selectViewModel.setDifficulty(@string/hard)}"
+                style="@style/radio_button_style"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/playButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/play"
+            android:onClick="@{() -> selectViewModel.onPlay()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

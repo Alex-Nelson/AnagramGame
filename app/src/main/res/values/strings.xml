@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Anagram Game</string>
+
+    <!-- Button Strings -->
+    <string name="new_game">New Game</string>
+    <string name="play">Play</string>
+    <string name="skip">Skip</string>
+    <string name="submit">Submit</string>
+
+    <!-- Radio Button Strings -->
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+
+    <!-- Snackbar Strings -->
+    <string name="delete_snackbar">Deletion Successful!</string>
+    <string name="correct_snackbar">Correct!</string>
+    <string name="incorrect_snackbar">Incorrect.</string>
+    <string name="skipped_snackbar">Skipped.</string>
+
+    <!-- Fragment labels -->
+    <string name="select_difficulty_label">Select Difficulty</string>
+    <string name="score_list_label">Your Scores</string>
+    <string name="game_label">Current Playing</string>
+    <string name="results_label">Your Results</string>
+
+    <string name="delete">Delete</string>
+
+    <!-- Strings for Alert Dialogs -->
+    <string name="exit_game">Exit Game?</string>
+    <string name="dialog_quit_warning">Your current progress will not be saved.</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete_all">Delete All Scores?</string>
+    <string name="dialog_delete_warning">All of your scores will be deleted.</string>
+
+    <!-- Game Fragment Text -->
+    <string name="your_answer">Your Answer</string>
+    <string name="score_text">Score: %d</string>
+    <string name="count_text">Word %d of 20</string>
+    <string name="play_again">Play Again</string>
+    <string name="quit">Quit</string>
+
+    <!-- Result Fragment Text -->
+    <string name="result_score">Score: %d / 200</string>
+    <string name="result_skipped">Skipped: %d words</string>
+    <string name="quit_game">Quit Game</string>
+
+    <!-- Binding strings -->
+    <string name="text_final_score">Total Score: %d</string>
+    <string name="text_game_difficulty">Difficulty: %s</string>
+    <string name="text_game_number">Game No. %d</string>
+
+</resources>
